@@ -195,18 +195,7 @@ export default class SimpleImg extends React.PureComponent<Props, State> {
 
     if (isCached) {
       return (
-        <div
-          style={{
-            ...(shouldUseAspectRatio
-              ? aspectRatioStyle
-              : {
-                  ...heightWidth,
-                  ...wrapperCommonStyle,
-                  ...style,
-                }),
-          }}
-          className={className}
-        >
+        <>
           <img
             style={{
               ...(isHeightAndWidthNotSet ? expendWidth : heightWidth),
@@ -215,7 +204,7 @@ export default class SimpleImg extends React.PureComponent<Props, State> {
             {...imageProps}
           />
           {noScript}
-        </div>
+        </>
       );
     }
 
